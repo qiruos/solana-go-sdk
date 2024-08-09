@@ -13,6 +13,7 @@ type SendTransactionConfig struct {
 	SkipPreflight       bool
 	PreflightCommitment rpc.Commitment
 	MaxRetries          uint64
+	MinContextSlot      uint64
 }
 
 func (c SendTransactionConfig) toRpc() rpc.SendTransactionConfig {
@@ -21,6 +22,7 @@ func (c SendTransactionConfig) toRpc() rpc.SendTransactionConfig {
 		PreflightCommitment: c.PreflightCommitment,
 		MaxRetries:          c.MaxRetries,
 		SkipPreflight:       c.SkipPreflight,
+		MinContextSlot:      c.MinContextSlot,
 	}
 }
 
